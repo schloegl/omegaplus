@@ -106,27 +106,27 @@
 #define SNP_GROUP_SIZE_POW2 1024//64//16384//1024//65536//16//16384
 #endif
 
-char bits_in_16bits [0x1u << 16];
+extern char bits_in_16bits [0x1u << 16];
 
-char VCF_alignment_name [MAX_CHROM_NAME_VCF];
-char VCF_alignment_name_cur [MAX_CHROM_NAME_VCF];
+extern char VCF_alignment_name [MAX_CHROM_NAME_VCF+1];
+extern char VCF_alignment_name_cur [MAX_CHROM_NAME_VCF+1];
 
-int VCF_header_lines;
-int VCF_first_SNP;
+extern int VCF_header_lines;
+extern int VCF_first_SNP;
 
-int nxtVCFalignment;
+extern int nxtVCFalignment;
 
-int linkage_disequilibrium;
+extern int linkage_disequilibrium;
 
-int borderTol;
+extern int borderTol;
 
-char runName[INFILENAMESIZE];
+extern char runName[INFILENAMESIZE];
 
 typedef float cor_t;
 
 cor_t ABS (cor_t input);
 
-double mainTime0;
+extern double mainTime0;
 
 typedef struct 
 {
@@ -165,7 +165,7 @@ typedef struct
 
 #ifdef _USE_PTHREADS
 
-pthread_t * workerThreadL;
+extern pthread_t * workerThreadL;
 
 typedef struct
 {
@@ -229,11 +229,11 @@ typedef struct
 }threadArgPWC_t_MULTI;
 
 
-threadArgPWC_t_MULTI * threadArgPWC_MULTI;
+extern threadArgPWC_t_MULTI * threadArgPWC_MULTI;
 
-float * maxOmegaValueThreadsMULTI;
-int * maxOmegaLeftIndexThreadsMULTI;
-int * maxOmegaRightIndexThreadsMULTI;
+extern float * maxOmegaValueThreadsMULTI;
+extern int * maxOmegaLeftIndexThreadsMULTI;
+extern int * maxOmegaRightIndexThreadsMULTI;
 
 #endif
 
@@ -306,9 +306,9 @@ void computeOmegasMULTI (alignment_struct * alignment, omega_struct * omega, int
 #ifdef _USE_OPENMP_GENERIC
 
 
-double * total_dp_init_time;
-double * total_dp_update_time;
-double * total_omega_values_time;
+extern double * total_dp_init_time;
+extern double * total_dp_update_time;
+extern double * total_omega_values_time;
 
 
 int compute_genLoad(int startIndex, int finishIndex, int prev_totalLoad, int prev_startIndex, int prev_finishIndex);

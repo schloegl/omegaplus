@@ -23,6 +23,12 @@
 
 
 #include "OmegaPlus.h"
+int borderTol;
+double mainTime0;
+char runName[INFILENAMESIZE];
+double * total_dp_init_time;
+double * total_dp_update_time;
+double * total_omega_values_time;
 
 double gettime(void)
 {
@@ -104,6 +110,8 @@ void introMsg(int argc, char ** argv, FILE * fpInfo, int fileFormat, int imputeN
 }
 
 #ifdef _USE_PTHREADS
+pthread_t * workerThreadL;
+
 /*static void pinToCore(int tid)
 {
 	cpu_set_t cpuset;
@@ -206,6 +214,8 @@ void setThreadArgumentsMEMINT (threadData_t * threadData, int tid, alignment_str
 }
 
 #ifdef _USE_PTHREADS_MULTI
+threadArgPWC_t_MULTI * threadArgPWC_MULTI;
+
 int ismyTurn(int partitionIndex,multi_sync_t * multi_sync)
 {
 	return multi_sync->myTurn[partitionIndex];

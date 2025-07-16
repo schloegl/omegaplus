@@ -23,6 +23,7 @@
 
 
 #include "OmegaPlus.h"
+char bits_in_16bits [0x1u << 16];
 
 /* LUT-based population counter */
 int iterated_bitcount(unsigned int n)

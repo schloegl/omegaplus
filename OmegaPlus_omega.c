@@ -23,6 +23,9 @@
 
 
 #include "OmegaPlus.h"
+float * maxOmegaValueThreadsMULTI;
+int * maxOmegaLeftIndexThreadsMULTI;
+int * maxOmegaRightIndexThreadsMULTI;
 
 inline int min(int a, int b)
 {

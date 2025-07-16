@@ -23,6 +23,14 @@
 
 
 #include "OmegaPlus.h"
+char VCF_alignment_name [MAX_CHROM_NAME_VCF+1];
+char VCF_alignment_name_cur [MAX_CHROM_NAME_VCF+1];
+
+int VCF_header_lines;
+int VCF_first_SNP;
+
+int linkage_disequilibrium;
+int nxtVCFalignment;
 
 void printVersion (FILE * fp)
 {
